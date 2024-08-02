@@ -6,78 +6,79 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "Assim que saiu da escola você se depara com uma nova tecnologia, um chat que consegue responder todas as dúvidas que uma pessoa pode ter, ele também gera imagens e áudios hiper-realistas. Qual o primeiro pensamento?",
+        enunciado: "Oque vocẽ acha da ultilização de robos para realizar tarefas ?",
         alternativas: [
             {
                 texto: "Isso é assustador!",
-                afirmacao: "afirmação"
+                afirmacao: "Não tem motivos para ter medo da evolução tecnologica "
             },
             {
                 texto: "Isso é maravilhoso!",
-                afirmacao: "afirmação"
+                afirmacao: "Sim! Isso pode ajudar muito a realizar trabalhos de maneira mais facil,"
             }
         ]
     },
     {
-        enunciado: "Com a descoberta desta tecnologia, chamada Inteligência Artificial, uma professora de tecnologia da escola decidiu fazer uma sequência de aulas sobre esta tecnologia. No fim de uma aula ela pede que você escreva um trabalho sobre o uso de IA em sala de aula. Qual atitude você toma?",
+        enunciado: "Os pequenos Robos já estão presente no nosso dia a dia, oque você pensa sobre isso ?",
         alternativas: [
             {
-                texto: "Utiliza uma ferramenta de busca na internet que utiliza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento.",
-                afirmacao: "afirmação"
+                texto: "é maravilhoso o fato de ter mais horas livres, uma vez que eles realizam atividades para nós,",
+                afirmacao: "Os robos estão facilitando nossa vida"
             },
             {
-                texto: "Escreve o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-                afirmacao: "afirmação"
+                texto: "Isso é horrivel, Os robos estão tirando o nosso trabalho",
+                afirmacao: "Isso é algo natural, não tem porque ter medo, isso acontece desde o inicio da humanidade."
             }
         ]
     },
     {
-        enunciado: "Após a elaboração do trabalho escrito, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona?",
+        enunciado: "Os robos exploradores são usados para desbravar planetas em busca de respostas e recursos em outros planetas",
         alternativas: [
             {
-                texto: "Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-                afirmacao: "afirmação"
+                texto: "Isso é muito mais víavel, pois mandar humanos para o espaço alem de caro é perigoso",
+                afirmacao: "isso torna os trabalhos de risco mais apropriados para eles,"
             },
             {
-                texto: "Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
-                afirmacao: "afirmação"
+                texto: "Enviar humanos para exploração espacial é melhor, pois humanos não emferrujam nem acabam a bateria",
+                afirmacao: "Você precisa estudar um pouco mais sobre isso, você esta um pouco equivocado (a),"
             }
         ]
     },
     {
-        enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
+        enunciado: "Como os robos humanoides podem auxiliar pessoas com deficiencia ?",
         alternativas: [
             {
-                texto: "Criar uma imagem utilizando uma plataforma de design como o Paint.",
-                afirmacao: "afirmação"
+                texto: "Eles podem realizar tarefas que pessoas debilitadas nao conseguem",
+                afirmacao: "O Optimus Gen 2 da Tesla, tem mãos semelhantes as nossas, com dedos e sensores tateis, oque permite realizar tarefas de maneira precisa, desde quebrar ovos, ate levar objetos as pessoas "
             },
             {
-                texto: "Criar uma imagem utilizando um gerador de imagem de IA.",
-                afirmacao: "afirmação"
+                texto: "Robos são perigosos, não devem se misturar com humanos",
+                afirmacao: "A tecnologia não é a vilã, é nossa aliada para realizar processos que algumas pessoas não conseguem"
             }
         ]
     },
     {
-        enunciado: "Você tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda da IA. O problema é que o trabalho está totalmente igual ao do chat. O que você faz? ",
+        enunciado: "O Unitree robot dog, está explorando e cuidano de lugares com radiação, que é inacessível para humanos",
         alternativas: [
             {
-                texto: "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
-                afirmacao: "afirmação"
+                texto: "Isso é maravilhoso, é muito mais seguro",
+                afirmacao: "Exato, vocẽ é uma pessoa que entende de tecnologia, os filmes de ficção que mostram a revolução das maquinas é uma bobagem, os robos são nossos aliados, e devem ser criados e usados para nos beneficiar em areas que somos defasados, e tambem para aumentar a segurança e precisão em algum trabalhos"
             },
             {
-                texto: "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
-                afirmacao: "afirmação"
+                texto: "Assustador",
+                afirmacao: " Você precisa estudar mais sobre tecnologia. "
             }
         ]
     },
 ];
+
 
 let atual = 0;
 let perguntaAtual;
 let historiaFinal = "";
 
 function mostraPergunta() {
-    if(atual>=perguntas.length){
+    if (atual >= perguntas.length) {
         mostraResultado();
         return;
     }
@@ -96,14 +97,14 @@ function mostraAlternativas(){
     }
 }
 
-function respostaSelecionada(opcaoSelecionada){
+function respostaSelecionada(opcaoSelecionada) {
     const afirmacoes = opcaoSelecionada.afirmacao;
     historiaFinal += afirmacoes + " ";
     atual++;
     mostraPergunta();
 }
 
-function mostraResultado(){
+function mostraResultado() {
     caixaPerguntas.textContent = "Em 2049...";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
